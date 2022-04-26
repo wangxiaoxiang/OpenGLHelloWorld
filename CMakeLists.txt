@@ -26,20 +26,17 @@ endif (WIN32)
 include_directories(
         include
         src
-        src/math
-        src/shader
 )
 
 # 保存目录变量
 aux_source_directory(. DIR_root)
 aux_source_directory(./src DIR_src)
-aux_source_directory(./src/shader DIR_shader)
 
 # 链接库目录
 link_directories(${GLFW_LIB_DIR})
 
 # 指定生成目标
-add_executable(demo ${DIR_root} ${DIR_src} ${DIR_shader})
+add_executable(demo ${DIR_root} ${DIR_src})
 
 # 链接目标库
 target_link_libraries(demo glfw)
